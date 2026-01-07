@@ -15,15 +15,12 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ int
+ bool
+ float
+ long int
+ double
+ char
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -62,64 +59,139 @@ video: Chapter 2 - Part 3
 //2)
 void variableDeclarations()
 {
-    //example:
-    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+    int red = 1; 
+    int blue = 2;
+    int green = 3;
+    bool yes = true;
+    bool no = false;
+    bool maybe = false;
+    float water = 62.424f;
+    float pi = 3.14159f;
+    float speed = 26.2f;
+    long int distance = 1000000000;
+    long int big = 2147483648;
+    long int small = 1073741824;
+    double indoorTemp = 71.5;
+    double outdoorTemp = 63.5;
+    double outdoorHumidity = 77.0;
+    char h = 98;
+    char c = 40;
+    char f = 35;
     
-
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused (red, blue, green, yes, no, maybe, water, pi, speed, distance, big, small, indoorTemp, outdoorTemp, outdoorHumidity, h, c,                     f); //passing each variable declared to the ignoreUnused() function
 }
+    /*
+     10 functions
+     example:
+     note: this example shows the result after completing steps 3-8
+     */
+    
+// 1
+int dailyTransactions(int wednesday, int thursday, int friday, int totalDailyTransactions)
+{
+    totalDailyTransactions = wednesday + thursday + friday;
+    ignoreUnused(wednesday, thursday, friday, totalDailyTransactions); 
+    return {};
+}
+// 2
+int weeklyTransactions(int week1 = 141, int week2 = 170, int week3 = 111, int week4 = 87, int totalWeeklyTransactions = 0)
+{
+    totalWeeklyTransactions = week1 + week2 + week3 + week4;      
+    ignoreUnused(week1, week2, week3, week4, totalWeeklyTransactions);
+    return{};
+}    
+// 3
+int quarterlyEarnings(int q1 = 3900, int q2 = 1800, int q3 = 1970, int q4 = 2900, int totalQuarterlyEarnings = 0)
+{
+    totalQuarterlyEarnings =  q1 + q2 + q3 + q4;
+    ignoreUnused(q1, q2, q3, q4, totalQuarterlyEarnings); 
+    return {};
+}   
+// 4
+bool hoursOfOperation(int storeOpenTime, int storeCloseTime, bool storeIsOpen)
+{
+    if(storeOpenTime > 800 && storeCloseTime < 2100)
+        {
+            storeIsOpen = true;
+        }
+    ignoreUnused(storeOpenTime, storeCloseTime, storeIsOpen); 
+    return {};
+}
+// 5
+bool hasAFever(float bodyTemp, bool hasAFever)
+{
+    if(bodyTemp > 100.4f)
+    {
+        hasAFever = true;
+    }
+    ignoreUnused(bodyTemp); 
+    return {};
+}  
+// 6
+float priceOfGoldDaily(float goldPrice, float dailyFluctuationInPercentage, int priceOfGoldToday)
+{
+    goldPrice = 4484.9f;  
+    std::cin >> dailyFluctuationInPercentage;
+    priceOfGoldToday = goldPrice + dailyFluctuationInPercentage;
+    ignoreUnused(goldPrice, dailyFluctuationInPercentage, priceOfGoldToday); 
+    return {};
+} 
+// 7
+int mailReceivedToday(int packagesReceived, int lettersReceived, int totalMailReceived)  
+{
+    std::cin >> packagesReceived;
+    std::cin >> lettersReceived;
+    totalMailReceived = packagesReceived + lettersReceived;
+    ignoreUnused(packagesReceived, lettersReceived, totalMailReceived); 
+    return{};
+} 
+// 8
+void output(int userInput)
+{
+    std::cout << "The number you entered is " << userInput;
+    ignoreUnused(userInput);
+}
+// 9
+double differenceInTemperature(double indoorTemp, double outdoorTemp)
+{
+    if(indoorTemp > outdoorTemp)
+    {
+        return indoorTemp - outdoorTemp;
+    }    
+    else
+    {
+        return outdoorTemp - indoorTemp;
+    }
+    ignoreUnused(indoorTemp, outdoorTemp);
+    return {};
+} 
+// 10
+int numStairsClimbedToTopFloor(int frontDoorStairs, int stairsToSecondFloor,int stairsToGarageFromFirstFloor, bool garageEntry, bool frontDoorEntry)
+{    // it's a confusing layout, but it's cozy. You'd like it.
+    frontDoorStairs = 2;
+    stairsToSecondFloor = 7;
+    stairsToGarageFromFirstFloor = 5;
+    if(frontDoorEntry)
+    {
+        return frontDoorStairs + stairsToSecondFloor;
+    }
+    if(garageEntry)
+    {
+        return stairsToGarageFromFirstFloor + stairsToSecondFloor;
+    }
+    ignoreUnused(frontDoorStairs, stairsToSecondFloor, stairsToGarageFromFirstFloor, garageEntry, frontDoorEntry); 
+    return {};
+}
+    
+    
 
-/*
- 10 functions
- example:
- note: this example shows the result after completing steps 3-8
- */
+
+    
 bool rentACar(int rentalDuration, int carType = 0)  //function declaration with random number of arguments, arbitrary number of arguments have default value
 { 
     ignoreUnused(rentalDuration, carType); //passing each function parameter to the ignoreUnused() function
     return {}; //if your function returns something other than void, add 'return {};' at the end of it.
 } 
-
-/*
- 1)
- */
-
-/*
- 2)
- */
-
-/*
- 3)
- */
-
-/*
- 4)
- */
-
-/*
- 5)
- */
-
-/*
- 6)
- */
-
-/*
- 7)
- */
-
-/*
- 8)
- */
-
-/*
- 9)
- */
-
-/*
- 10)
- */
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -139,29 +211,28 @@ int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
-    
     //1)
-    
+    auto numSalesForTheDay = dailyTransactions(20, 19, 37, 0);
     //2)
-    
+    auto numSalesForTheWeek = weeklyTransactions(141, 170, 111, 87, 0); 
     //3)
-    
+    auto earnings = quarterlyEarnings(3900, 1800, 1970, 2900, 0);
     //4)
-    
+    bool storeOpen = hoursOfOperation(900, 1700, false);
     //5)
-    
+    auto feverCheck = hasAFever(101.5f, false);
     //6)
-    
+    auto todaysGoldPrice = priceOfGoldDaily(4484.9f, 0.5f, 0);
     //7)
-    
+    auto dailyMail = mailReceivedToday(3, 5, 0);  
     //8)
-    
+    output(42);
     //9)
-    
+    auto differenceBetweenIndoorAndOutdoorTemp = differenceInTemperature(71.5, 63.5);
     //10)
+    auto numStairsClimbed = numStairsClimbedToTopFloor(2, 7, 5, false, true);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, numSalesForTheDay, numSalesForTheWeek, earnings, storeOpen, feverCheck, todaysGoldPrice, dailyMail, differenceBetweenIndoorAndOutdoorTemp, numStairsClimbed);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
