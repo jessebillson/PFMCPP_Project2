@@ -146,10 +146,12 @@ int mailReceivedToday(int packagesReceived, int lettersReceived, int totalMailRe
     return{};
 } 
 // 8
-void output(int userInput)
+int yourAge(int age)
 {
-    std::cout << "The number you entered is " << userInput;
-    ignoreUnused(userInput);
+    std::cout << "enter your age";
+    std::cin >> age;
+    ignoreUnused(age);
+    return {};
 }
 // 9
 double differenceInTemperature(double indoorTemp, double outdoorTemp)
@@ -226,13 +228,13 @@ int main()
     //7)
     auto dailyMail = mailReceivedToday(3, 5, 0);  
     //8)
-    output(42);
+    auto userNum = yourAge(43);
     //9)
     auto differenceBetweenIndoorAndOutdoorTemp = differenceInTemperature(71.5, 63.5);
     //10)
     auto numStairsClimbed = numStairsClimbedToTopFloor(2, 7, 5, false, true);
     
-    ignoreUnused(carRented, numSalesForTheDay, numSalesForTheWeek, earnings, storeOpen, feverCheck, todaysGoldPrice, dailyMail, differenceBetweenIndoorAndOutdoorTemp, numStairsClimbed);
+    ignoreUnused(carRented, numSalesForTheDay, numSalesForTheWeek, earnings, storeOpen, feverCheck, todaysGoldPrice, dailyMail,                                yourAge,differenceBetweenIndoorAndOutdoorTemp, numStairsClimbed);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
