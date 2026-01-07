@@ -89,105 +89,63 @@ void variableDeclarations()
 // 1
 int dailyTransactions(int wednesday, int thursday, int friday, int totalDailyTransactions)
 {
-    totalDailyTransactions = wednesday + thursday + friday;
     ignoreUnused(wednesday, thursday, friday, totalDailyTransactions); 
     return {};
 }
 // 2
 int weeklyTransactions(int week1 = 141, int week2 = 170, int week3 = 111, int week4 = 87, int totalWeeklyTransactions = 0)
-{
-    totalWeeklyTransactions = week1 + week2 + week3 + week4;      
+{ 
     ignoreUnused(week1, week2, week3, week4, totalWeeklyTransactions);
     return{};
 }    
 // 3
 int quarterlyEarnings(int q1 = 3900, int q2 = 1800, int q3 = 1970, int q4 = 2900, int totalQuarterlyEarnings = 0)
 {
-    totalQuarterlyEarnings =  q1 + q2 + q3 + q4;
     ignoreUnused(q1, q2, q3, q4, totalQuarterlyEarnings); 
     return {};
 }   
 // 4
 bool hoursOfOperation(int storeOpenTime, int storeCloseTime, bool storeIsOpen)
 {
-    if(storeOpenTime > 800 && storeCloseTime < 2100)
-        {
-            storeIsOpen = true;
-        }
     ignoreUnused(storeOpenTime, storeCloseTime, storeIsOpen); 
     return {};
 }
 // 5
 bool hasAFever(float bodyTemp, bool hasAFever)
 {
-    if(bodyTemp > 100.4f)
-    {
-        hasAFever = true;
-    }
-    ignoreUnused(bodyTemp); 
+    ignoreUnused(bodyTemp, hasAFever); 
     return {};
 }  
 // 6
 float priceOfGoldDaily(float goldPrice, float dailyFluctuationInPercentage, int priceOfGoldToday)
 {
-    goldPrice = 4484.9f;  
-    std::cin >> dailyFluctuationInPercentage;
-    priceOfGoldToday = goldPrice + dailyFluctuationInPercentage;
     ignoreUnused(goldPrice, dailyFluctuationInPercentage, priceOfGoldToday); 
     return {};
 } 
 // 7
 int mailReceivedToday(int packagesReceived, int lettersReceived, int totalMailReceived)  
 {
-    std::cin >> packagesReceived;
-    std::cin >> lettersReceived;
-    totalMailReceived = packagesReceived + lettersReceived;
     ignoreUnused(packagesReceived, lettersReceived, totalMailReceived); 
     return{};
 } 
 // 8
 int yourAge(int age)
 {
-    std::cout << "enter your age";
-    std::cin >> age;
     ignoreUnused(age);
     return {};
 }
 // 9
 double differenceInTemperature(double indoorTemp, double outdoorTemp)
 {
-    if(indoorTemp > outdoorTemp)
-    {
-        return indoorTemp - outdoorTemp;
-    }    
-    else
-    {
-        return outdoorTemp - indoorTemp;
-    }
     ignoreUnused(indoorTemp, outdoorTemp);
     return {};
 } 
 // 10
 int numStairsClimbedToTopFloor(int frontDoorStairs, int stairsToSecondFloor,int stairsToGarageFromFirstFloor, bool garageEntry, bool frontDoorEntry)
-{    // it's a confusing layout, but it's cozy. You'd like it.
-    frontDoorStairs = 2;
-    stairsToSecondFloor = 7;
-    stairsToGarageFromFirstFloor = 5;
-    if(frontDoorEntry)
-    {
-        return frontDoorStairs + stairsToSecondFloor;
-    }
-    if(garageEntry)
-    {
-        return stairsToGarageFromFirstFloor + stairsToSecondFloor;
-    }
+{
     ignoreUnused(frontDoorStairs, stairsToSecondFloor, stairsToGarageFromFirstFloor, garageEntry, frontDoorEntry); 
     return {};
 }
-    
-    
-
-
     
 bool rentACar(int rentalDuration, int carType = 0)  //function declaration with random number of arguments, arbitrary number of arguments have default value
 { 
