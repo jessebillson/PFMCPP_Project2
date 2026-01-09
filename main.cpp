@@ -192,7 +192,7 @@ int main()
     //10)
     auto numStairsClimbed = numStairsClimbedToTopFloor(2, 7, 5, false, true);
     
-    ignoreUnused(carRented, numSalesForTheDay, numSalesForTheWeek, earnings, storeOpen, feverCheck, todaysGoldPrice, dailyMail,                                yourAge,differenceBetweenIndoorAndOutdoorTemp, numStairsClimbed);
+    ignoreUnused(carRented, numSalesForTheDay, numSalesForTheWeek, earnings, storeOpen, feverCheck, todaysGoldPrice, dailyMail,                                userNum,differenceBetweenIndoorAndOutdoorTemp, numStairsClimbed);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
